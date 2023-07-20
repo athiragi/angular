@@ -1,0 +1,12 @@
+
+<app-pfs-add (addItem)="itemAdd($event)"></app-pfs-add>
+<div *ngIf="this.add.length===0; else elseBlock">Nothing to display</div>
+<ng-template #elseBlock>
+<div *ngFor="let i of add">
+    
+   <!-- <li>{{i.sno}} - {{i.title}} - {{i.desc}} - {{i
+      .active}}</li> -->
+
+   <app-pfs-item [i]="i" (addDelete)="deleteAdd($event)"></app-pfs-item>
+</div>
+</ng-template>
